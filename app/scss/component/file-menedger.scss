@@ -109,7 +109,7 @@
             justify-content: space-between;
             background-color: #738ab5;            
             position: relative;
-            z-index: 2;
+            z-index: 7;
             .filter-title {
                 height: auto;
                 width: auto;
@@ -122,6 +122,8 @@
             
             .btn-menu {
                 @extend %btnMobile;
+                position: relative;
+                z-index: 10;
             }    
         }
         .btn-group{
