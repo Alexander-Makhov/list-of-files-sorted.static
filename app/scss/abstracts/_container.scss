@@ -1,0 +1,9 @@
+@mixin container( $padding, $padding_value, $width ) {
+    margin: 0 auto 1.5rem;
+    #{ $padding }: #{ $padding_value };
+    width: #{ $width };
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+

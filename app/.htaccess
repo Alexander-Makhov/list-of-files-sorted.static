@@ -1,0 +1,23 @@
+DirectoryIndex index.html index.php index.shtml
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+ErrorDocument 404 /404.html
+# or map them to one error document:
+# ErrorDocument 404 /pages/errors/error_redirect.php
+# ErrorDocument 500 /pages/errors/error_redirect.php
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
+RewriteRule ^([^.]+)\.html$ https://alexander-makhov.github.io/trail/$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !(\.[^./]+)$
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+RewriteRule (.*) /$1.html [L]
+</IfModule>
+
+# MIME TYPES
+<IfModule mod_mime.c>
+AddType image/svg+xml .svg .svgz
+</IfModule>

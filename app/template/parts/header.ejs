@@ -1,0 +1,10 @@
+<!-- Header block. -->
+<header class="header">
+    <div class="container">
+        <h1>Heading H1</h1>
+        <p>Header content...</p>
+        <%= require("./test.ejs")({
+            ejs_test: `Successful template loading EJS! ${pageName[0].toUpperCase() + pageName.substring(1)} page`
+        }) %>
+    </div>
+</header>

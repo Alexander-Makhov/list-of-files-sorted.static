@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<% const pageName = "404"; %>
+<%= require("./parts/head.ejs")({ pageName: pageName }) %>
+<body>
+    <div class="layout">
+        <main class="main">            
+            <%= require("./parts/header.ejs")({ pageName: pageName }) %>
+            <div class="content">                
+                <div class="section">
+                    <div class="container">
+                        <h2>Heading H2</h2>
+                        <p>404 content...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%= require("./parts/footer.ejs")({ pageName: pageName }) %>
+    </div>
+</body>
+</html>

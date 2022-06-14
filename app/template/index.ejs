@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<% const pageName = "home"; %>
+<%= require("./parts/head.ejs")({ pageName: pageName }) %>
+<body>
+    <div class="layout">
+        <main class="main">            
+            <!-- %= require("./parts/header.ejs")({ pageName: pageName }) %> -->
+            <div class="content">                
+                <div class="section">
+                    <div class="container">
+                        <!-- <h2>Heading H2</h2> -->
+                        <h2 style="color: #5863f8;">List of files sorted</h2>
+                        <!-- <p>Main content...</p> -->
+                        <div id="files-app" class="files-app"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- %= require("./parts/footer.ejs")({ pageName: pageName }) %> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    color: #000;
+    * {
+        //font-family: inherit;
+        //font-family: 'Roboto', sans-serif;
+        //font-family: 'Hind', sans-serif;
+        //font-family: 'Kanit', sans-serif;
+        //font-family: 'Geometria', sans-serif;
+        //font-family: 'Gotham Pro', sans-serif;
+        //font-family: 'Lato', sans-serif;
+        //font-family: 'Montserrat', sans-serif;
+        //font-family: 'Myriad Pro', sans-serif;
+        //font-family: 'Neo Sans Pro', sans-serif;
+        //font-family: 'Open Sans', sans-serif;
+        //font-family: 'Panton', sans-serif;
+        //font-family: 'Proxima Nova Bl', sans-serif;
+        //font-family: 'Raleway', sans-serif;
+        font-family: 'Poppins', sans-serif;
+    }
+    text-rendering: optimizeLegibility;
+}
+
+.container{
+    @include container( padding, toEm( 0 ) toEm( 15px ), toEm( 1400px ));
+
+    @media all and (max-width: toEm(1400px)) {
+        @include container( padding, toEm( 0 ) toEm( 15px ), toEm( 1320px ));
+    }
+
+    @media all and (max-width: toEm(1200px)) {
+        @include container( padding, toEm( 0 ) toEm( 15px ), toEm( 1140px ));
+    }
+
+    @media all and (max-width: toEm(992px)) {
+        @include container( padding, toEm( 0 ) toEm( 15px ), toEm( 960px ));
+    }
+
+    @media all and (max-width: toEm(768px)) {
+        @include container( padding, toEm( 0 ) toEm( 15px ), toEm( 720px ));
+    }
+    
+    @media all and (max-width: toEm(576px)) {
+        @include container( padding, toEm( 0 ) toEm( 15px ), toEm( 540px ));
+    }
+}
+
+.container-fluid{
+    @include container( padding, toRem( 0 ) toRem( 15px ), 100% );
+}
+
+.img {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.layout {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 100%, 1fr ));
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        'content'
+        'main';
+    .main {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat( auto-fill, minmax( 100%, 1fr ));
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            'header'
+            'content';
+        @import "./header";
+        .content {
+            padding: toRem(12px) 0 0;
+            height: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat( auto-fill, minmax( 100%, 1fr ));
+            grid-template-rows: auto 1fr;
+            grid-template-areas:
+            'section';
+            @import "./section";
+        }
+    }
+    @import "./footer";
+}
